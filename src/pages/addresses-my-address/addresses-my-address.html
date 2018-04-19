@@ -1,0 +1,60 @@
+<!--
+  Generated template for the AddressesMyAddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center>
+        <h4>My Addresses</h4>
+      </ion-col>
+      <ion-col style="text-align: right;">
+        <button ion-button id="new_address">New Address</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <button ion-button id="btn_active" [outline]="btn_archived" (click)="enableActive()">Active</button>
+      <button ion-button id="btn_archived" [outline]="btn_active" (click)="enableArchive()">Archived</button>
+      <table id="tbl_address">
+        <thead>
+          <tr>
+            <td>
+              Address
+            </td>
+            <td>
+              Balance
+            </td>
+            <td>
+              Withdrawal Limit
+            </td>
+            <td>
+              Actions
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CY4tQDS6qrnyHW7zDQFLkhHMWf1WPifKM7</td>
+            <td>0.0000000000 PTC</td>
+            <td> 0.0000000000 PTC</td>
+            <td>
+              <ion-list>
+                <ion-item>
+                  <ion-select [(ngModel)]="address_action">
+                    <ion-option value="archive_address">Archive Address</ion-option>
+                    <ion-option value="change_limit">Change Limit</ion-option>
+                    <ion-option value="show_qr">Show QR Code</ion-option>
+                    <ion-option value="sign_message">Sign Message</ion-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ion-row>
+  </ion-grid>
+</ion-content>

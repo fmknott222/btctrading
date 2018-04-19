@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h4 class="center_text">Wallet Login</h4>
+  <ion-list>
+  
+    <ion-item>
+      <ion-label stacked>AccountID</ion-label>
+      <ion-input type="text" [(ngModel)]="accountid"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label stacked>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <div style="text-align:center;">
+    <button ion-button full (click)="loginUser()">
+      Login
+    </button>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 style="text-align:left;">
+        <button ion-button clear (click)="createUser()">Registration</button>
+      </ion-col>
+      <ion-col col-6 style="text-align:right;">
+        <button ion-button clear (click)="gotoResetPage()">Reset Password</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

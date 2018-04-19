@@ -1,0 +1,19 @@
+<ion-menu [content]="mycontent" persistent="true">
+    <ion-header>
+        <ion-toolbar color="danger">
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-item text-wrap *ngFor="let submenu of menulist; let i=index">
+                <button ion-button full clear (click)="selectItem(i)">{{submenu.title}}</button>
+            </ion-item>
+            <ion-item (click)="logOut()">
+                <button ion-button full clear>Logout</button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

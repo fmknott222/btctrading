@@ -1,0 +1,27 @@
+page-addresses-my-address {
+    #new_address {
+        padding: 3px !important;
+        height: 3rem !important;
+    }
+    #tbl_address {
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    #tbl_address thead {
+        background-color: #8b8b8b;
+    }
+
+    #tbl_address thead tr td {
+        text-align: center;
+        width: 25%;
+    }
+
+    #btn_active {
+        margin: 0 !important;
+    }
+
+    #btn_archived {
+        margin: 0 !important;
+    }
+}

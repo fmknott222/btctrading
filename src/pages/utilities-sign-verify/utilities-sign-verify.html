@@ -1,0 +1,73 @@
+<!--
+  Generated template for the UtilitiesSignVerifyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center>
+        <h4 *ngIf="active_sign">Sign Message</h4>
+        <h4 *ngIf="!active_sign">Verify Message</h4>
+      </ion-col>
+      <ion-col style="text-align: right;" class="btn_container">
+        <button ion-button [outline]="!active_sign" id="btn_sign" (click)="clickSign()">Sign</button>
+        <button ion-button [outline]="active_sign" id="btn_verify" (click)="clickVerify()">Verify</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+
+    <!-- Addresss -->
+    <ion-row>
+      <ion-col>
+        <h6>Address</h6>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Message -->
+    <ion-row>
+      <ion-col>
+        <h6>Message:</h6>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Signature -->
+    <ion-row *ngIf="!active_sign">
+      <ion-col>
+        <h6>Signature:</h6>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!active_sign">
+      <ion-col>
+        <ion-item>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Sign button -->
+    <ion-row>
+      <ion-col>
+        <button ion-button *ngIf="active_sign">Sign</button>
+        <button ion-button *ngIf="!active_sign">Verify</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
