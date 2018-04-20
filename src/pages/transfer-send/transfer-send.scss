@@ -11,4 +11,12 @@ page-transfer-send {
     .right_item {
         float: right;
     }
+
+    #new_address, #change_mode {
+        cursor: pointer;
+    }
+
+    .center_content {
+        text-align: center;
+    }
 }

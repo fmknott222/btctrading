@@ -12,9 +12,24 @@ page-addresses-my-address {
         background-color: #8b8b8b;
     }
 
-    #tbl_address thead tr td {
+    // #tbl_address thead tr td {
+    //     text-align: center;
+    //     width: 25%;
+    // }
+
+    #tbl_address thead tr td:nth-child(1) {
         text-align: center;
         width: 25%;
+    }
+
+    #tbl_address thead tr td:nth-child(2), #tbl_address thead tr td:nth-child(3) {
+        text-align: center;
+        width: 15%;
+    }
+
+    #tbl_address thead tr td:nth-child(4) {
+        text-align: center;
+        width: 45%;
     }
 
     #btn_active {
@@ -23,5 +38,9 @@ page-addresses-my-address {
 
     #btn_archived {
         margin: 0 !important;
+    }
+
+    .active_action {
+        max-width: 100% !important;
     }
 }

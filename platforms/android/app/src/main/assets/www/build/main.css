@@ -25715,9 +25715,19 @@ page-addresses-my-address #tbl_address thead {
   background-color: #8b8b8b;
 }
 
-page-addresses-my-address #tbl_address thead tr td {
+page-addresses-my-address #tbl_address thead tr td:nth-child(1) {
   text-align: center;
   width: 25%;
+}
+
+page-addresses-my-address #tbl_address thead tr td:nth-child(2), page-addresses-my-address #tbl_address thead tr td:nth-child(3) {
+  text-align: center;
+  width: 15%;
+}
+
+page-addresses-my-address #tbl_address thead tr td:nth-child(4) {
+  text-align: center;
+  width: 45%;
 }
 
 page-addresses-my-address #btn_active {
@@ -25726,6 +25736,10 @@ page-addresses-my-address #btn_active {
 
 page-addresses-my-address #btn_archived {
   margin: 0 !important;
+}
+
+page-addresses-my-address .active_action {
+  max-width: 100% !important;
 }
 
 page-createaccount #link_goto {
@@ -25763,6 +25777,14 @@ page-transfer-send .left_item {
 
 page-transfer-send .right_item {
   float: right;
+}
+
+page-transfer-send #new_address, page-transfer-send #change_mode {
+  cursor: pointer;
+}
+
+page-transfer-send .center_content {
+  text-align: center;
 }
 
 page-utilities-sign-verify #btn_sign {

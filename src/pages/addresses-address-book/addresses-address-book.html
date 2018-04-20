@@ -11,13 +11,42 @@
         <h4>Address Book</h4>
       </ion-col>
       <ion-col style="text-align: right;">
-        <button ion-button id="new_entry">Add New Entry</button>
+        <button ion-button id="new_entry" (click)="addNewEntry()">Add New Entry</button>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row  *ngIf="entries.length == 0; else entrytable">
       <ion-col>
         <p>Address book is still empty.</p>
       </ion-col>
     </ion-row>
+
+    <ng-template #entrytable>
+      <table>
+        <thead>
+          <tr>
+            <td>Address</td>
+            <td>Label</td>
+            <td>Actions</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of entries; let i=index">
+            <td>{{entry.address}}</td>
+            <td>{{entry.label}}</td>
+            <td>
+              <ion-list>
+                <ion-item>
+                  <ion-select [(ngModel)]="entry_action" style="max-width: 100%;
+                  font-size: 8pt;">
+                    <ion-option value="edit_label">Edit Label</ion-option>
+                    <ion-option value="remove_entry">Remove Entry</ion-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-template>
   </ion-grid>
 </ion-content>

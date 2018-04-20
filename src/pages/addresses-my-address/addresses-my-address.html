@@ -12,7 +12,7 @@
         <h4>My Addresses</h4>
       </ion-col>
       <ion-col style="text-align: right;">
-        <button ion-button id="new_address">New Address</button>
+        <button ion-button id="new_address" (click)="addNewAddress()">New Address</button>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -36,19 +36,28 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>CY4tQDS6qrnyHW7zDQFLkhHMWf1WPifKM7</td>
-            <td>0.0000000000 PTC</td>
-            <td> 0.0000000000 PTC</td>
-            <td>
+          <tr *ngFor="let item of active_address; let i=index">
+
+            <td id="address_{{i}}">{{item.address}}</td>
+            <td>{{item.balance}}PTC</td>
+            <td>{{item.withdrawal_limit}}PTC</td>
+            <td *ngIf="btn_active">
               <ion-list>
                 <ion-item>
-                  <ion-select [(ngModel)]="address_action">
+                  <ion-select [(ngModel)]="address_action" style="max-width: 100%;
+    font-size: 8pt;">
                     <ion-option value="archive_address">Archive Address</ion-option>
                     <ion-option value="change_limit">Change Limit</ion-option>
                     <ion-option value="show_qr">Show QR Code</ion-option>
                     <ion-option value="sign_message">Sign Message</ion-option>
                   </ion-select>
+                </ion-item>
+              </ion-list>
+            </td>
+            <td *ngIf="btn_archived">
+              <ion-list>
+                <ion-item>
+                  <button ion-button>Reactivate</button>
                 </ion-item>
               </ion-list>
             </td>

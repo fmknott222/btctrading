@@ -21,6 +21,14 @@ export class AddressesMyAddressPage {
 
   public btn_archived:boolean = false;
 
+  active_address: any = [
+    {
+      address: "CY4tQDS6qrnyHW7zDQFLkhHMWf1WPifKM7",
+      balance: "0.0000000000",
+      withdrawal_limit: "0.0000000000"
+    }
+  ];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -34,8 +42,19 @@ export class AddressesMyAddressPage {
   }
 
   enableArchive() {
+    event.stopPropagation();
     this.btn_active = false;
     this.btn_archived = true;
+  }
+
+  addNewAddress() {
+    this.active_address.push(
+      {
+        address: "123123123",
+        balance: "0.0000000000",
+        withdrawal_limit: "0.0000000000"
+      }
+    )
   }
 
 }

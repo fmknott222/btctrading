@@ -15,11 +15,23 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class AddressesAddressBookPage {
 
+  entries:any = [];
+  entry_action: string = "edit_label";
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddressesAddressBookPage');
+  }
+
+  addNewEntry() {
+    this.entries.push(
+      {
+        address: "123123123",
+        label: "testlabel"
+      }
+    )
   }
 
 }
